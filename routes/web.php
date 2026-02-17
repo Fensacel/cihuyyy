@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RekapController;
+use App\Http\Controllers\BendaharaController;
 use Illuminate\Support\Facades\Route;
 
 // ══════════════════════════════════════════════════════════════════
@@ -130,5 +131,23 @@ Route::middleware(['auth', 'password.set'])->group(function () {
                 ->name('qr.generate');
             Route::get('/riwayat', [AttendanceController::class, 'riwayat'])
                 ->name('riwayat');
+        });
+
+    // ── BENDAHARA ────────────────────────────────────────────────
+    Route::middleware('role:bendahara')
+        ->prefix('bendahara')
+        ->name('bendahara.')
+        ->group(function () {
+            Route::get('/dashboard', [BendaharaController::class, 'index'])->name('dashboard');
+            
+            Route::get('/pemasukan', [BendaharaController::class, 'pemasukan'])->name('pemasukan');
+            Route::post('/pemasukan', [BendaharaController::class, 'storePemasukan'])->name('pemasukan.store');
+            
+            Route::get('/pengeluaran', [BendaharaController::class, 'pengeluaran'])->name('pengeluaran');
+            Route::post('/pengeluaran', [BendaharaController::class, 'storePengeluaran'])->name('pengeluaran.store');
+            
+            Route::get('/laporan', [BendaharaController::class, 'laporan'])->name('laporan');
+
+            Route::delete('/transaction/{transaction}', [BendaharaController::class, 'destroy'])->name('transaction.destroy');
         });
 });

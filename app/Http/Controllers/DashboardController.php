@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\BendaharaController;
 
 class DashboardController extends Controller
 {
@@ -16,6 +17,7 @@ class DashboardController extends Controller
         return match ($user->role) {
             'walikelas'  => view('dashboard.walikelas', $this->walkelasData()),
             'sekertaris' => view('dashboard.sekertaris', $this->sekertarisData()),
+            'bendahara'  => app(BendaharaController::class)->index(),
             'siswa'      => view('dashboard.siswa', $this->siswaData($user)),
             default      => abort(403),
         };

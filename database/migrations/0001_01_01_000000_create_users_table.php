@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('google_id')->nullable()->unique();
             $table->string('avatar')->nullable();
-            $table->enum('role', ['walikelas', 'sekertaris', 'siswa'])->default('siswa');
+            $table->enum('role', ['walikelas', 'sekertaris', 'bendahara', 'siswa'])->default('siswa');
             $table->string('kelas')->nullable();
             $table->string('no_absen')->nullable();
             $table->enum('gender', ['L', 'P'])->nullable();

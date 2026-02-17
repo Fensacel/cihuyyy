@@ -95,6 +95,40 @@
                 </div>
             @endif
 
+            @if(auth()->user()->isBendahara())
+                <div class="pt-4 pb-2">
+                    <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Bendahara</p>
+                </div>
+                <a href="{{ route('bendahara.dashboard') }}"
+                   class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium {{ request()->routeIs('bendahara.dashboard') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="{{ route('bendahara.pemasukan') }}"
+                   class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium {{ request()->routeIs('bendahara.pemasukan') ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    Pemasukan
+                </a>
+                <a href="{{ route('bendahara.pengeluaran') }}"
+                   class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium {{ request()->routeIs('bendahara.pengeluaran') ? 'bg-red-50 text-red-700' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                    </svg>
+                    Pengeluaran
+                </a>
+                <a href="{{ route('bendahara.laporan') }}"
+                   class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium {{ request()->routeIs('bendahara.laporan') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                    Laporan
+                </a>
+            @endif
+
             @if(auth()->user()->isSiswa())
                 <div class="pt-4 pb-2">
                     <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Siswa</p>

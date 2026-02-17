@@ -47,5 +47,16 @@ class DatabaseSeeder extends Seeder
                 'profile_completed' => true,
             ]
         );
+
+        User::firstOrCreate(
+            ['email' => 'bendahara@sekolah.test'],
+            [
+                'name'     => 'Bendahara Kelas',
+                'password' => Hash::make('Password'),
+                'role'     => 'bendahara',
+                'email_verified_at' => now(),
+                'profile_completed' => true,
+            ]
+        );
     }
 }
