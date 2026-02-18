@@ -96,7 +96,12 @@
                     document.getElementById('distance-value').textContent = data.distance;
                     document.getElementById('token-text').textContent = data.token || '';
                 } else {
-                    showError(data.message, `Jarak Anda: ${data.distance}m | Radius: ${schoolRadius}m`);
+                    let detail = `Jarak Anda: ${data.distance}m | Radius: ${schoolRadius}m`;
+                    if (data.debug) {
+                        console.log('Debug Info:', data.debug);
+                        detail += ` (User: ${data.debug.user_lat}, ${data.debug.user_lng} | School: ${data.debug.school_lat}, ${data.debug.school_lng})`;
+                    }
+                    showError(data.message, detail);
                 }
             } catch (error) {
                 showError('Gagal menghubungi server', 'Periksa koneksi internet Anda');

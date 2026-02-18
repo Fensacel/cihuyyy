@@ -5,13 +5,13 @@
             <p class="text-sm text-gray-500 mt-1">Laporan khusus jam masuk siswa</p>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex flex-wrap items-center gap-3">
             <button onclick="window.print()"
                     class="inline-flex items-center justify-center rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
                 🖨️ Print
             </button>
             {{-- Filter --}}
-            <form action="{{ route('sekertaris.recap.masuk') }}" method="GET" class="flex items-center gap-2">
+            <form action="{{ route('sekertaris.recap.masuk') }}" method="GET" class="flex flex-wrap items-center gap-2">
                 @include('sekertaris.partials.filter')
             </form>
         </div>

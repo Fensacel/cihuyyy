@@ -5,7 +5,7 @@
             <p class="text-sm text-gray-500 mt-1">Laporan kehadiran siswa per hari</p>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex flex-wrap items-center gap-3">
             <a href="{{ route('sekertaris.scan') }}"
                class="inline-flex items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                 📷 Scan QR
@@ -19,7 +19,7 @@
                 🖨️ Print
             </button>
             {{-- Filter --}}
-            <form action="{{ route('sekertaris.recap') }}" method="GET" class="flex items-center gap-2">
+            <form action="{{ route('sekertaris.recap') }}" method="GET" class="flex flex-wrap items-center gap-2">
                 @include('sekertaris.partials.filter')
             </form>
         </div>

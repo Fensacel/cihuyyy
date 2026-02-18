@@ -55,6 +55,12 @@ class AttendanceController extends Controller
                 'success'  => false,
                 'message'  => 'Anda berada di luar jangkauan kelas (' . round($distance, 1) . 'm).',
                 'distance' => round($distance, 1),
+                'debug'    => [
+                    'user_lat' => $request->latitude,
+                    'user_lng' => $request->longitude,
+                    'school_lat' => config('school.latitude'),
+                    'school_lng' => config('school.longitude'),
+                ]
             ], 422);
         }
 
