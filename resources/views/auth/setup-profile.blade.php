@@ -31,7 +31,12 @@
     <div class="rounded-2xl bg-white/95 backdrop-blur-sm shadow-2xl p-6 sm:p-8">
         @if(session('success'))
             <div class="mb-5 rounded-lg bg-green-50 border border-green-200 p-3">
-                <p class="text-sm text-green-700">✅ {{ session('success') }}</p>
+                <p class="text-sm text-green-700 flex items-center gap-2">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {{ session('success') }}
+                </p>
             </div>
         @endif
 
@@ -91,20 +96,33 @@
                     <label class="flex items-center gap-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2.5 hover:bg-gray-50 transition-colors flex-1">
                         <input type="radio" name="gender" value="L" {{ old('gender', $user->gender) == 'L' ? 'checked' : '' }}
                                class="h-4 w-4 text-primary-600 border-gray-300 focus:ring-primary-500" required>
-                        <span class="text-sm text-gray-700">👦 Laki-laki</span>
+                        <span class="text-sm text-gray-700 flex items-center gap-1.5">
+                            <svg class="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                            Laki-laki
+                        </span>
                     </label>
                     <label class="flex items-center gap-2 cursor-pointer rounded-xl border border-gray-200 px-4 py-2.5 hover:bg-gray-50 transition-colors flex-1">
                         <input type="radio" name="gender" value="P" {{ old('gender', $user->gender) == 'P' ? 'checked' : '' }}
                                class="h-4 w-4 text-primary-600 border-gray-300 focus:ring-primary-500">
-                        <span class="text-sm text-gray-700">👧 Perempuan</span>
+                        <span class="text-sm text-gray-700 flex items-center gap-1.5">
+                            <svg class="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                            Perempuan
+                        </span>
                     </label>
                 </div>
             </div>
 
             {{-- Submit --}}
             <button type="submit"
-                    class="w-full rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
-                ✅ Simpan & Masuk Dashboard
+                    class="w-full flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Simpan & Masuk Dashboard
             </button>
         </form>
     </div>

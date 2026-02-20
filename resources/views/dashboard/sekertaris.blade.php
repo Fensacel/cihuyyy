@@ -14,8 +14,14 @@
                     Sesi Pagi (06:00 - 08:00)
                 </span>
             </div>
-            <p class="text-xs {{ $isMorningSession ? 'text-green-600' : 'text-gray-400' }}">
-                {{ $isMorningSession ? '✅ Sesi aktif — silakan scan QR' : '⏸ Sesi tidak aktif' }}
+            <p class="text-xs flex items-center gap-1.5 {{ $isMorningSession ? 'text-green-600' : 'text-gray-400' }}">
+                @if($isMorningSession)
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Sesi aktif — silakan scan QR
+                @else
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Sesi tidak aktif
+                @endif
             </p>
         </div>
 
@@ -27,8 +33,14 @@
                     Sesi Sore (15:00 - 16:00)
                 </span>
             </div>
-            <p class="text-xs {{ $isAfternoonSession ? 'text-blue-600' : 'text-gray-400' }}">
-                {{ $isAfternoonSession ? '✅ Sesi aktif — silakan scan QR' : '⏸ Sesi tidak aktif' }}
+            <p class="text-xs flex items-center gap-1.5 {{ $isAfternoonSession ? 'text-blue-600' : 'text-gray-400' }}">
+                @if($isAfternoonSession)
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Sesi aktif — silakan scan QR
+                @else
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Sesi tidak aktif
+                @endif
             </p>
         </div>
 

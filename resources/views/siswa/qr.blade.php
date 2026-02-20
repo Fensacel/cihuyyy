@@ -24,16 +24,22 @@
                 <p id="error-message" class="text-sm font-semibold text-red-700 mb-2"></p>
                 <p id="error-detail" class="text-xs text-gray-500"></p>
                 <button onclick="requestLocation()"
-                        class="mt-4 rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-700 transition-colors">
-                    🔄 Coba Lagi
+                        class="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-700 transition-colors">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                    Coba Lagi
                 </button>
             </div>
 
             {{-- QR Code Display --}}
             <div id="qr-display" class="hidden">
                 <div class="mb-4">
-                    <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                        ✅ Lokasi valid — Jarak: <span id="distance-value">0</span>m
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Lokasi valid — Jarak: <span id="distance-value">0</span>m
                     </span>
                 </div>
                 <div id="qr-code" class="flex items-center justify-center p-4 bg-white rounded-xl border border-gray-100 mx-auto" style="max-width: 320px;"></div>
@@ -43,8 +49,11 @@
                 </div>
                 <p class="text-xs text-gray-400 mt-4">QR Code berlaku selama 5 menit. Tunjukkan ke Sekertaris untuk di-scan.</p>
                 <button onclick="refreshQr()"
-                        class="mt-4 rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-700 transition-colors">
-                    🔄 Refresh QR Code
+                        class="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-700 transition-colors">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                    Refresh QR Code
                 </button>
             </div>
         </div>

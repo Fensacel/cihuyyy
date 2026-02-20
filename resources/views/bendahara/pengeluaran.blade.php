@@ -8,8 +8,11 @@
                 <p class="text-sm text-gray-500 mt-1">Catat semua pengeluaran (Kredit)</p>
             </div>
             <button @click="modalOpen = true" 
-                    class="inline-flex items-center justify-center rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
-                ➖ Catat Pengeluaran
+                    class="inline-flex items-center justify-center gap-1.5 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                </svg>
+                Catat Pengeluaran
             </button>
         </div>
 

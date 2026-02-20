@@ -57,7 +57,7 @@ class DashboardController extends Controller
     {
         $now = now();
         $today = $now->toDateString();
-        $currentTime = $now->format('H:i');
+        $currentTime = $now->format('H:i:s');
 
         // Tentukan sesi aktif
         $morningStart = config('school.session.morning.start');
